@@ -754,3 +754,64 @@ html.light-theme .card-glow {
         font-size: 0.85rem;
     }
 }
+
+/* --- Theme Switch View Transitions --- */
+
+/* Disable standard CSS transition during the view transition to prevent style interpolation conflicts */
+html.theme-transitioning-to-dark *,
+html.theme-transitioning-to-light * {
+    transition: none !important;
+}
+
+/* Customize View Transition animations */
+::view-transition-group(root) {
+    animation-duration: 1.1s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+    height: 100%;
+}
+
+/* Slide/Sweep animation configurations */
+
+/* Going to Dark Theme (Dark sweep from left to right) */
+html.theme-transitioning-to-dark::view-transition-new(root) {
+    animation: sweep-left-to-right 1.1s cubic-bezier(0.4, 0, 0.2, 1) both;
+    z-index: 9999;
+}
+html.theme-transitioning-to-dark::view-transition-old(root) {
+    z-index: 1;
+}
+
+/* Going to Light Theme (Light sweep from right to left) */
+html.theme-transitioning-to-light::view-transition-new(root) {
+    animation: sweep-right-to-left 1.1s cubic-bezier(0.4, 0, 0.2, 1) both;
+    z-index: 9999;
+}
+html.theme-transitioning-to-light::view-transition-old(root) {
+    z-index: 1;
+}
+
+/* Sweep Keyframes using clip-path polygon */
+@keyframes sweep-left-to-right {
+    from {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes sweep-right-to-left {
+    from {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
