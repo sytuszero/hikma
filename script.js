@@ -191,11 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Interactive Physics Particle Canvas
   function initPhysicsCanvas() {
-    if (window.innerWidth < 768) {
-      const canvas = document.getElementById('ziq-hero-canvas');
-      if (canvas) canvas.style.display = 'none';
-      return;
-    }
     const canvas = document.getElementById('ziq-hero-canvas');
     if (!canvas) return;
 
@@ -219,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const particles = [];
     let particleCount = width < 768 ?
-        Math.min(36, Math.floor((width * height) / 7500)) :
+        Math.min(15, Math.floor((width * height) / 9000)) :
         Math.min(65, Math.floor((width * height) / 18000));
 
     const sparks = [];
