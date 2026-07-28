@@ -39,19 +39,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function setTheme(theme) {
-        if (theme === 'light') {
-            htmlEl.classList.add('light-theme');
+    function setTheme(theme, isInitialLoad = false) {
+        const changeTheme = () => {
+            if (theme === 'light') {
+                htmlEl.classList.add('light-theme');
+            } else {
+                htmlEl.classList.remove('light-theme');
+            }
+            localStorage.setItem('theme', theme);
+            updateThemeSwitcherUI(theme);
+        };
+
+        if (!isInitialLoad && document.startViewTransition) {
+            // Add helper classes to control direction in CSS
+            if (theme === 'dark') {
+                htmlEl.classList.add('theme-transitioning-to-dark');
+                htmlEl.classList.remove('theme-transitioning-to-light');
+            } else {
+                htmlEl.classList.add('theme-transitioning-to-light');
+                htmlEl.classList.remove('theme-transitioning-to-dark');
+            }
+
+            const transition = document.startViewTransition(changeTheme);
+
+            // Clean up helper classes after transition completes
+            transition.finished.finally(() => {
+                htmlEl.classList.remove('theme-transitioning-to-dark', 'theme-transitioning-to-light');
+            });
         } else {
-            htmlEl.classList.remove('light-theme');
+            changeTheme();
         }
-        localStorage.setItem('theme', theme);
-        updateThemeSwitcherUI(theme);
     }
 
     function initTheme() {
         const savedTheme = localStorage.getItem('theme') || 'light';
-        setTheme(savedTheme);
+        setTheme(savedTheme, true);
     }
 
     function updateThemeSwitcherUI(theme) {
