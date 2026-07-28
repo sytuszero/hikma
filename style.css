@@ -75,10 +75,18 @@ body {
     color: var(--text-primary);
     height: 100vh;
     overflow: hidden;
+    overflow-x: hidden;
+    max-width: 100%;
     position: relative;
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 
 /* Typography Directives */
 body[dir="rtl"] {
@@ -94,7 +102,7 @@ body[dir="ltr"] {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 1;
     pointer-events: none;
@@ -436,7 +444,7 @@ body[dir="rtl"] .platform-icon-well { margin-left: 12px; }
     font-weight: 700;
     color: var(--text-primary);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-    text-align: justify;
+    text-align: start;
 }
 html.light-theme .row-title {
     text-shadow: none;
@@ -654,6 +662,41 @@ html.light-theme .card-glow {
         margin: 0 4px;
     }
 }
+
+/* Extra small mobile viewport adjustments */
+@media (max-width: 380px) {
+    .container {
+        padding: 2.2rem 0.8rem;
+    }
+    
+    .logo-title {
+        font-size: 1.05rem;
+    }
+    
+    .link-row {
+        padding: 0.7rem 0.75rem;
+    }
+    
+    body[dir="ltr"] .platform-icon-well { margin-right: 6px; }
+    body[dir="rtl"] .platform-icon-well { margin-left: 6px; }
+    
+    .row-title {
+        font-size: 0.78rem;
+    }
+    
+    .row-badge {
+        font-size: 0.52rem;
+        padding: 1.5px 5px;
+        border-radius: 5px;
+    }
+    
+    .led-indicator {
+        width: 6px;
+        height: 6px;
+        margin: 0 2px;
+    }
+}
+
 
 /* Height-based responsive adaptations */
 @media (max-height: 750px) {
