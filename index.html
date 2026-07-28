@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <script>
+        // Immediate theme initialization to prevent Flash of Light/Dark Theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-theme');
+            } else {
+                document.documentElement.classList.remove('light-theme');
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="meta-title">كلية الحكمة الجامعة - دليل قنوات التواصل والخدمات | Al-Hikma University College</title>
+    <meta name="description" id="meta-desc" content="الدليل الرسمي لقنوات التواصل الاجتماعي والخدمات الطلابية لكلية الحكمة الجامعة. تابع آخر الأخبار، خطوط النقل، والسكن الجامعي.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="كلية الحكمة الجامعة, الحكمة الجامعة, دليل الحكمة, Al-Hikma University College, HIUC, دليل قنوات التواصل الحكمة, الموقع الرسمي كلية الحكمة, خدمات الطلاب كلية الحكمة">
+    <meta name="author" content="Al-Hikma University College">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="كلية الحكمة الجامعة - دليل قنوات التواصل والخدمات | Al-Hikma University College">
+    <meta property="og:description" content="الدليل الرسمي لقنوات التواصل الاجتماعي والخدمات الطلابية لكلية الحكمة الجامعة. تابع آخر الأخبار، خطوط النقل، والسكن الجامعي.">
+    <meta property="og:image" content="dark.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="كلية الحكمة الجامعة - دليل قنوات التواصل والخدمات">
+    <meta name="twitter:description" content="الدليل الرسمي لقنوات التواصل الاجتماعي والخدمات الطلابية لكلية الحكمة الجامعة.">
+    <meta name="twitter:image" content="dark.webp">
+
+    <!-- Google Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "كلية الحكمة الجامعة",
+      "alternateName": "Al-Hikma University College",
+      "url": "https://hiuc.edu.iq",
+      "logo": "https://hiuc.edu.iq/wp-content/uploads/2023/10/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/hekmah.uc/",
+        "https://instagram.com/hikma.uc",
+        "https://t.me/hikmah_uc",
+        "https://t.me/hikmah_cars",
+        "https://t.me/universites_of_iraq_house",
+        "https://hiuc.edu.iq/"
+      ],
+      "description": "الدليل الرسمي لقنوات التواصل الاجتماعي والخدمات الطلابية لكلية الحكمة الجامعة. تابع آخر الأخبار، خطوط النقل، والسكن الجامعي."
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200..700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css?v=31">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="dark.webp">
+</head>
+<body class="light-theme">
+    <!-- Interactive Background Canvas -->
+    <canvas id="ziq-hero-canvas"></canvas>
+
+    <!-- Subtle Background Glow -->
+    <div class="luxury-bg-glow"></div>
+
+    <div class="container">
+
+        <!-- Center Header -->
+        <header class="top-nav">
+            <div class="logo-area">
+                <div class="logo-well">
+                    <img class="college-logo logo-dark-theme" src="dark.webp" alt="Al-Hikma University College Logo" fetchpriority="high">
+                    <img class="college-logo logo-light-theme" src="light.webp" alt="Al-Hikma University College Logo" fetchpriority="high">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title" data-en="Al-Hikma University College" data-ar="كلية الحكمة الجامعة">كلية الحكمة الجامعة</span>
+                </div>
+            </div>
+
+            <div class="nav-controls">
+                <div class="lang-selector-neo active-ar" id="lang-toggle">
+                    <div class="lang-slider"></div>
+                    <button class="lang-btn btn-en" data-lang="en">EN</button>
+                    <button class="lang-btn btn-ar" data-lang="ar">عربي</button>
+                </div>
+            </div>
+
+            <div class="theme-controls">
+                <div class="theme-selector-neo active-light" id="theme-toggle">
+                    <div class="theme-slider"></div>
+                    <button class="theme-btn btn-dark" data-theme="dark" aria-label="Dark Mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="theme-btn btn-light" data-theme="light" aria-label="Light Mode">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Directory List -->
+        <main class="grid-container" id="directory-grid">
+            
+            <!-- Official Website Link Row -->
+            <a href="https://hiuc.edu.iq/" target="_blank" class="card link-row" data-category="official" id="card-website">
+                <div class="card-glow"></div>
+                <div class="row-left">
+                    <div class="platform-icon-well">
+                        <div class="platform-icon web-color">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                    </div>
+                    <span class="row-title" data-en="Official Website" data-ar="الموقع الإلكتروني الرسمي">الموقع الإلكتروني الرسمي</span>
+                </div>
+                <div class="row-right">
+                    <span class="row-badge" data-en="Official" data-ar="رسمي">رسمي</span>
+                    <div class="led-indicator web-led"></div>
+                    <div class="row-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Facebook Link Row -->
+            <a href="https://www.facebook.com/hekmah.uc/" target="_blank" class="card link-row" data-category="official" id="card-fb">
+                <div class="card-glow"></div>
+                <div class="row-left">
+                    <div class="platform-icon-well">
+                        <div class="platform-icon fb-color">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                    </div>
+                    <span class="row-title" data-en="Official Facebook Page" data-ar="صفحة الفيسبوك الرسمية">صفحة الفيسبوك الرسمية</span>
+                </div>
+                <div class="row-right">
+                    <span class="row-badge" data-en="Official" data-ar="رسمي">رسمي</span>
+                    <div class="led-indicator fb-led"></div>
+                    <div class="row-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Instagram Link Row -->
+            <a href="https://instagram.com/hikma.uc" target="_blank" class="card link-row" data-category="official" id="card-ig">
+                <div class="card-glow"></div>
+                <div class="row-left">
+                    <div class="platform-icon-well">
+                        <div class="platform-icon ig-color">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                    <span class="row-title" data-en="Official Instagram Account" data-ar="حساب الإنستغرام الرسمي">حساب الإنستغرام الرسمي</span>
+                </div>
+                <div class="row-right">
+                    <span class="row-badge" data-en="Official" data-ar="رسمي">رسمي</span>
+                    <div class="led-indicator ig-led"></div>
+                    <div class="row-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Telegram Channel Link Row -->
+            <a href="https://t.me/hikmah_uc" target="_blank" class="card link-row" data-category="official" id="card-tg-news">
+                <div class="card-glow"></div>
+                <div class="row-left">
+                    <div class="platform-icon-well">
+                        <div class="platform-icon tg-color">
+                            <i class="fa-brands fa-telegram"></i>
+                        </div>
+                    </div>
+                    <span class="row-title" data-en="Official Telegram Channel" data-ar="قناة التيليجرام الرسمية">قناة التيليجرام الرسمية</span>
+                </div>
+                <div class="row-right">
+                    <span class="row-badge" data-en="Official" data-ar="رسمي">رسمي</span>
+                    <div class="led-indicator tg-led"></div>
+                    <div class="row-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Telegram Cars Link Row -->
+            <a href="https://t.me/hikmah_cars" target="_blank" class="card link-row" data-category="services" id="card-tg-cars">
+                <div class="card-glow"></div>
+                <div class="row-left">
+                    <div class="platform-icon-well">
+                        <div class="platform-icon service-color">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+                    </div>
+                    <span class="row-title" data-en="Al-Hikma University Transport" data-ar="خطوط جامعة الحكمة">خطوط جامعة الحكمة</span>
+                </div>
+                <div class="row-right">
+                    <span class="row-badge service-badge" data-en="Services" data-ar="خدمات">خدمات</span>
+                    <div class="led-indicator service-led"></div>
+                    <div class="row-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Telegram Housing Link Row -->
+            <a href="https://t.me/universites_of_iraq_house" target="_blank" class="card link-row" data-category="services" id="card-tg-house">
+                <div class="card-glow"></div>
+                <div class="row-left">
+                    <div class="platform-icon-well">
+                        <div class="platform-icon service-color">
+                            <i class="fa-solid fa-house-chimney-window"></i>
+                        </div>
+                    </div>
+                    <span class="row-title" data-en="Student Housing Channel" data-ar="قناة السكن الطلابي">قناة السكن الطلابي</span>
+                </div>
+                <div class="row-right">
+                    <span class="row-badge service-badge" data-en="Services" data-ar="خدمات">خدمات</span>
+                    <div class="led-indicator service-led"></div>
+                    <div class="row-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Waze Location Link Row -->
+            <a href="https://waze.com/ul/hsvzt3jbex" target="_blank" class="card link-row" data-category="services" id="card-waze">
+                <div class="card-glow"></div>
+                <div class="row-left">
+                    <div class="platform-icon-well">
+                        <div class="platform-icon waze-color">
+                            <i class="fa-brands fa-waze"></i>
+                        </div>
+                    </div>
+                    <span class="row-title" data-en="University Location on Waze" data-ar="موقع الجامعة على Waze">موقع الجامعة على Waze</span>
+                </div>
+                <div class="row-right">
+                    <span class="row-badge service-badge" data-en="Directions" data-ar="اتجاهات">اتجاهات</span>
+                    <div class="led-indicator waze-led"></div>
+                    <div class="row-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                </div>
+            </a>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <p class="copyright">
+                &copy; <span id="copyright-year">2026</span> 
+                <span data-en="Al-Hikma University College." data-ar="كلية الحكمة الجامعة.">كلية الحكمة الجامعة.</span>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification for Copy Actions -->
+    <div id="toast-notification" class="toast" role="alert" aria-live="polite">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toast-message" data-en="Link copied successfully!" data-ar="تم نسخ الرابط بنجاح!">تم نسخ الرابط بنجاح!</span>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js?v=31"></script>
+</body>
+</html>
